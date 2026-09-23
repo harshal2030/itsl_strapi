@@ -35,16 +35,6 @@
       "type": "biginteger",
       "required": true
     },
-    "rebalance": {
-      "type": "enumeration",
-      "required": true,
-      "enum": [
-        "daily",
-        "weekly",
-        "monthly",
-        "yearly"
-      ]
-    },
     "universe": {
       "type": "string",
       "required": true
@@ -77,6 +67,10 @@
     },
     "type": {
       "type": "string"
+    },
+    "rebalance": {
+      "type": "string",
+      "required": true
     }
   }
 }

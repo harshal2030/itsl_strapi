@@ -756,10 +756,7 @@ export interface ApiModelPortfolioModelPortfolio
     overview: Schema.Attribute.RichText & Schema.Attribute.Required;
     plan_name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    rebalance: Schema.Attribute.Enumeration<
-      ['daily', 'weekly', 'monthly', 'yearly']
-    > &
-      Schema.Attribute.Required;
+    rebalance: Schema.Attribute.String & Schema.Attribute.Required;
     recommended_investment: Schema.Attribute.BigInteger &
       Schema.Attribute.Required;
     sector_spread: Schema.Attribute.JSON & Schema.Attribute.Required;
