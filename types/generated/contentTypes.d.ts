@@ -726,6 +726,53 @@ export interface ApiFinancialReportFinancialReport
   };
 }
 
+export interface ApiModelPortfolioModelPortfolio
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'model_portfolios';
+  info: {
+    displayName: 'model_portfolio';
+    pluralName: 'model-portfolios';
+    singularName: 'model-portfolio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    advance_collection_period_in_month: Schema.Attribute.String;
+    annual_fee: Schema.Attribute.BigInteger & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    gst_rate: Schema.Attribute.Integer & Schema.Attribute.Required;
+    ideal_for: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::model-portfolio.model-portfolio'
+    > &
+      Schema.Attribute.Private;
+    methodology: Schema.Attribute.Media<'files'> & Schema.Attribute.Required;
+    no_of_stocks: Schema.Attribute.Integer & Schema.Attribute.Required;
+    overview: Schema.Attribute.RichText & Schema.Attribute.Required;
+    plan_name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    rebalance: Schema.Attribute.Enumeration<
+      ['daily', 'weekly', 'monthly', 'yearly']
+    > &
+      Schema.Attribute.Required;
+    recommended_investment: Schema.Attribute.BigInteger &
+      Schema.Attribute.Required;
+    sector_spread: Schema.Attribute.JSON & Schema.Attribute.Required;
+    short_description: Schema.Attribute.Text & Schema.Attribute.Required;
+    tags: Schema.Attribute.String;
+    type: Schema.Attribute.String;
+    universe: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOpeningOpening extends Struct.CollectionTypeSchema {
   collectionName: 'openings';
   info: {
@@ -1455,6 +1502,7 @@ declare module '@strapi/strapi' {
       'api::contact-form.contact-form': ApiContactFormContactForm;
       'api::disclosure-2015.disclosure-2015': ApiDisclosure2015Disclosure2015;
       'api::financial-report.financial-report': ApiFinancialReportFinancialReport;
+      'api::model-portfolio.model-portfolio': ApiModelPortfolioModelPortfolio;
       'api::opening.opening': ApiOpeningOpening;
       'api::overview.overview': ApiOverviewOverview;
       'api::shareholder-relation-category.shareholder-relation-category': ApiShareholderRelationCategoryShareholderRelationCategory;

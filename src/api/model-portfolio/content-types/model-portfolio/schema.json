@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "model_portfolios",
+  "info": {
+    "singularName": "model-portfolio",
+    "pluralName": "model-portfolios",
+    "displayName": "model_portfolio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "plan_name": {
+      "type": "string",
+      "required": true
+    },
+    "annual_fee": {
+      "type": "biginteger",
+      "required": true
+    },
+    "gst_rate": {
+      "type": "integer",
+      "required": true
+    },
+    "short_description": {
+      "type": "text",
+      "required": true
+    },
+    "ideal_for": {
+      "type": "string",
+      "required": true
+    },
+    "recommended_investment": {
+      "type": "biginteger",
+      "required": true
+    },
+    "rebalance": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly",
+        "yearly"
+      ]
+    },
+    "universe": {
+      "type": "string",
+      "required": true
+    },
+    "methodology": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "overview": {
+      "type": "richtext",
+      "required": true
+    },
+    "no_of_stocks": {
+      "type": "integer",
+      "required": true
+    },
+    "sector_spread": {
+      "type": "json",
+      "required": true
+    },
+    "tags": {
+      "type": "string"
+    },
+    "advance_collection_period_in_month": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    }
+  }
+}

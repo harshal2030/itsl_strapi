@@ -54,6 +54,8 @@ export default {
       "api::client-relation.client-relation.findOne",
       "api::blog.blog.find",
       "api::blog.blog.findOne",
+      "api::model-portfolio.model-portfolio.find",
+      "api::model-portfolio.model-portfolio.findOne"
     ];
 
     for (const action of actions) {
