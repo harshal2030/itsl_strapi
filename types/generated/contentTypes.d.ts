@@ -763,6 +763,9 @@ export interface ApiModelPortfolioModelPortfolio
     short_description: Schema.Attribute.Text & Schema.Attribute.Required;
     tags: Schema.Attribute.String;
     type: Schema.Attribute.String;
+    unique_text_identifier: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     universe: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

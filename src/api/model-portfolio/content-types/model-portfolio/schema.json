@@ -11,6 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "unique_text_identifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
     "plan_name": {
       "type": "string",
       "required": true
